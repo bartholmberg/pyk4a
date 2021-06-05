@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79500de8-2d45-4e1b-869a-6039479b6221}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>setup.py</StartupFile>
+    <SearchPath>pyk4a\;tests\;example\</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="figs\pyk4a_logo.png" />
+    <Content Include="requirements-dev.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="example\benchmark.py" />
+    <Compile Include="example\color_formats.py" />
+    <Compile Include="example\devices.py" />
+    <Compile Include="example\helpers.py" />
+    <Compile Include="example\imu.py" />
+    <Compile Include="example\playback.py" />
+    <Compile Include="example\record.py" />
+    <Compile Include="example\threads.py" />
+    <Compile Include="example\viewer.py" />
+    <Compile Include="example\viewer_depth.py" />
+    <Compile Include="example\viewer_point_cloud.py" />
+    <Compile Include="example\viewer_transformation.py" />
+    <Compile Include="pyk4a\calibration.py" />
+    <Compile Include="pyk4a\capture.py" />
+    <Compile Include="pyk4a\config.py" />
+    <Compile Include="pyk4a\errors.py" />
+    <Compile Include="pyk4a\playback.py" />
+    <Compile Include="pyk4a\pyk4a.py" />
+    <Compile Include="pyk4a\record.py" />
+    <Compile Include="pyk4a\results.py" />
+    <Compile Include="pyk4a\transformation.py" />
+    <Compile Include="pyk4a\__init__.py" />
+    <Compile Include="setup.py" />
+    <Compile Include="tests\conftest.py" />
+    <Compile Include="tests\functional\conftest.py" />
+    <Compile Include="tests\functional\test_calibration.py" />
+    <Compile Include="tests\functional\test_capture.py" />
+    <Compile Include="tests\functional\test_device.py" />
+    <Compile Include="tests\functional\test_playback.py" />
+    <Compile Include="tests\functional\test_record.py" />
+    <Compile Include="tests\functional\__init__.py" />
+    <Compile Include="tests\plugins\calibration.py" />
+    <Compile Include="tests\plugins\capture.py" />
+    <Compile Include="tests\plugins\device.py" />
+    <Compile Include="tests\plugins\playback.py" />
+    <Compile Include="tests\unit\test_calibration.py" />
+    <Compile Include="tests\unit\test_device.py" />
+    <Compile Include="tests\unit\test_playback.py" />
+    <Compile Include="tests\unit\test_record.py" />
+    <Compile Include="tests\unit\__init__.py" />
+    <Compile Include="tests\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="example" />
+    <Folder Include="figs" />
+    <Folder Include="pyk4a" />
+    <Folder Include="tests" />
+    <Folder Include="tests\functional" />
+    <Folder Include="tests\plugins" />
+    <Folder Include="tests\unit" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
