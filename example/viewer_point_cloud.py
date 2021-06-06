@@ -11,7 +11,7 @@ def main():
         Config(
             color_resolution=pyk4a.ColorResolution.RES_720P,
             camera_fps=pyk4a.FPS.FPS_5,
-            depth_mode=pyk4a.DepthMode.WFOV_2X2BINNED,
+            depth_mode=pyk4a.DepthMode.NFOV_2X2BINNED,
             synchronized_images_only=True,
         )
     )
@@ -26,10 +26,11 @@ def main():
         capture = k4a.get_capture()
         if np.any(capture.depth) and np.any(capture.color):
             break
-    while True:
-        capture = k4a.get_capture()
-        if np.any(capture.depth) and np.any(capture.color):
-            break
+         
+#    while True:
+#        capture = k4a.get_capture()
+#        if np.any(capture.depth) and np.any(capture.color):
+#            break
     points = capture.depth_point_cloud.reshape((-1, 3))
     colors = capture.transformed_color[..., (2, 1, 0)].reshape((-1, 3))
 

@@ -5,14 +5,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{79500de8-2d45-4e1b-869a-6039479b6221}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>setup.py</StartupFile>
-    <SearchPath>pyk4a\;tests\;example\</SearchPath>
+    <StartupFile>example\viewer_transformation.py</StartupFile>
+    <SearchPath>pyk4a\;tests\;example\;..\..\anaconda3\include</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
     <TestFramework>Pytest</TestFramework>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />

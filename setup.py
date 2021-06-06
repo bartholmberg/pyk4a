@@ -19,7 +19,8 @@ class get_numpy_include:
 
 module = Extension('k4a_module',
                    sources=['pyk4a/pyk4a.cpp'],
-                   include_dirs=[get_numpy_include()],
+                   include_dirs=[get_numpy_include(),'C:/Program Files/Azure Kinect SDK v1.4.1/sdk/include', ],
+                   library_dirs=['C:/Program Files/Azure Kinect SDK v1.4.1/sdk/windows-desktop/amd64/release/lib' ],
                    libraries=['k4a', 'k4arecord'])
 
 setup(ext_modules=[module])
