@@ -16,7 +16,9 @@ class get_numpy_include:
         import numpy
         return numpy.get_include()
 
-
+#
+#  BAH, 6/6/2021 - manually add include and library paths for >> ....pyk4a\pyk4a\pyk4a.cpp build
+#
 module = Extension('k4a_module',
                    sources=['pyk4a/pyk4a.cpp'],
                    include_dirs=[get_numpy_include(),'C:/Program Files/Azure Kinect SDK v1.4.1/sdk/include', ],
