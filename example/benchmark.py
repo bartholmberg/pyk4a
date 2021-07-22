@@ -4,7 +4,7 @@ from time import monotonic
 
 from pyk4a import FPS, ColorResolution, Config, DepthMode, ImageFormat, PyK4A, WiredSyncMode
 
-
+from matplotlib import pyplot as plt
 class EnumAction(Action):
     """
     Argparse action for handling Enums
@@ -77,18 +77,18 @@ def parse_args() -> Namespace:
         "--color-format",
         type=ImageFormat,
         action=EnumActionTuned,
-        default=ImageFormat.COLOR_BGRA32,
+        default=ImageFormat.COLOR_NV12,
         help="Color color_image color_format. Default: BGRA32",
     )
     parser.add_argument(
         "--depth-mode",
         type=DepthMode,
         action=EnumAction,
-        default=DepthMode.NFOV_UNBINNED,
-        help="Depth sensor mode. Default: NFOV_UNBINNED",
+        default=DepthMode.NFOV_2X2BINNED,
+        help="Depth sensor mode. Default: NFOV_2X2BINNED",
     )
     parser.add_argument(
-        "--camera-fps", type=FPS, action=EnumActionTuned, default=FPS.FPS_30, help="Camera FPS. Default: 30"
+        "--camera-fps", type=FPS, action=EnumActionTuned, default=0, help="Camera FPS. Default: 5"
     )
     parser.add_argument(
         "--synchronized-images-only",
@@ -122,6 +122,12 @@ def bench(config: Config, device_id: int):
     while True:
         try:
             capture = device.get_capture()
+            img_color = capture.color
+            # Display with pyplot
+
+            #plt.imshow(img_color[:, :, 2::-1]) # BGRA to RGB
+            plt.imshow(img_color) # BGRA to RGB
+            plt.show()
             if capture.color is not None:
                 color += 1
                 color_period += 1
@@ -152,6 +158,7 @@ def main():
         synchronized_images_only=args.synchronized_images_only,
         wired_sync_mode=args.wired_sync_mode,
     )
+    config.camera_fps=0
     bench(config, args.device_id)
 
 

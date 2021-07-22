@@ -5,13 +5,13 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{79500de8-2d45-4e1b-869a-6039479b6221}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>example\viewer_point_cloud.py</StartupFile>
+    <StartupFile>example\benchmark.py</StartupFile>
     <SearchPath>pyk4a\;tests\;example\;..\..\anaconda3\include</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId />
+    <InterpreterId>CondaEnv|CondaEnv|o3d</InterpreterId>
     <TestFramework>Pytest</TestFramework>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <IsWindowsApplication>False</IsWindowsApplication>
@@ -38,6 +38,9 @@
     <Compile Include="example\viewer_depth.py" />
     <Compile Include="example\viewer_point_cloud.py" />
     <Compile Include="example\viewer_transformation.py" />
+    <Compile Include="foo.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyk4a\calibration.py" />
     <Compile Include="pyk4a\capture.py" />
     <Compile Include="pyk4a\config.py" />
@@ -76,6 +79,9 @@
     <Folder Include="tests\functional" />
     <Folder Include="tests\plugins" />
     <Folder Include="tests\unit" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|o3d" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
