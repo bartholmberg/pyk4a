@@ -1,9 +1,9 @@
 # pyk4a
 
-######  👉 Build or install k4a for pyk4a and set PYK4A path symbols
+######  👉 Build or install k4a for pyk4a
 ####### Set the library directory for k4a.lib and k4a.dll
 set LD_LIBRARY_PATH=C:\Program Files\Azure Kinect SDK v1.4.1\sdk\windows-desktop\amd64\release\lib
-set K4A_DLL_DIR=C:\Program Files\Azure Kinect SDK v1.4.1\sdk\windows-desktop\amd64\release\bin
+set LD_LIBRARY_PATH=C:\Program Files\Azure Kinect SDK v1.4.1\sdk\windows-desktop\amd64\release\bin
 
 
 
