@@ -122,12 +122,14 @@ def bench(config: Config, device_id: int):
     while True:
         try:
             capture = device.get_capture()
-            img_color = capture.color
+            b = capture.color
             # Display with pyplot
 
             #plt.imshow(img_color[:, :, 2::-1]) # BGRA to RGB
-            plt.imshow(img_color) # BGRA to RGB
-            plt.show()
+            plt.imshow( b.astype('uint8'))
+            plt.show(block=False)
+            plt.pause(0.1)
+            plt.draw()
             if capture.color is not None:
                 color += 1
                 color_period += 1
@@ -151,14 +153,16 @@ def bench(config: Config, device_id: int):
 
 def main():
     args = parse_args()
+    args.camera_fps = FPS.FPS_5
     config = Config(
         color_resolution=args.color_resolution,
         color_format=args.color_format,
+        camera_fps=FPS.FPS_5,
         depth_mode=args.depth_mode,
         synchronized_images_only=args.synchronized_images_only,
         wired_sync_mode=args.wired_sync_mode,
     )
-    config.camera_fps=0
+
     bench(config, args.device_id)
 
 

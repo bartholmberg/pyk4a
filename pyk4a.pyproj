@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{79500de8-2d45-4e1b-869a-6039479b6221}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>example\benchmark.py</StartupFile>
+    <StartupFile>foo.py</StartupFile>
     <SearchPath>pyk4a\;tests\;example\;..\..\anaconda3\include</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -15,6 +15,8 @@
     <TestFramework>Pytest</TestFramework>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterArguments>
+    </InterpreterArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
