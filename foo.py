@@ -13,3 +13,4 @@ img_color = capture.color
 
 plt.imshow(img_color[:, :, 2::-1]) # BGRA to RGB
 plt.show()
+a = capture

@@ -5,6 +5,8 @@
 set LD_LIBRARY_PATH=C:\Program Files\Azure Kinect SDK v1.4.1\sdk\windows-desktop\amd64\release\lib
 set K4A_DLL_DIR=C:\Program Files\Azure Kinect SDK v1.4.1\sdk\windows-desktop\amd64\release\bin
 
+**** UPDATE: that some installations still fail 
+**** WHAT TO DO:  I needed to add C:\Program Files\Azure Kinect SDK v1.4.1\sdk\windows-desktop\amd64\release\bin to PATH 
 
 
 ![CI](https://github.com/etiennedub/pyk4a/workflows/CI/badge.svg)
